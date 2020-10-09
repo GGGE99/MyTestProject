@@ -50,4 +50,4 @@ before_script:
 - echo "before_script Complete"
 
 
-before_install: cd project
+before_install: cd LysBackend
