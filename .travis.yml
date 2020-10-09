@@ -18,7 +18,7 @@ services:
    - mysql
 
 before_script:
-  - cd \LysBackend
+  - cd LysBackend
 # TODO Add variable to make it simple to be reusable for all semester projects
 #- export DEBIAN_FRONTEND="noninteractive";
 #- PW="ax2"
