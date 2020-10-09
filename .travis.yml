@@ -18,7 +18,6 @@ services:
    - mysql
 
 before_script:
-  - cd LysBackend
 # TODO Add variable to make it simple to be reusable for all semester projects
 #- export DEBIAN_FRONTEND="noninteractive";
 #- PW="ax2"
@@ -49,3 +48,6 @@ before_script:
 # - sudo systemctl start mysql
 - mysql --version
 - echo "before_script Complete"
+
+
+before_install: cd project
