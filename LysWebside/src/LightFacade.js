@@ -1,23 +1,19 @@
-const url = "https://marcge.dk/tomcat/person/api/person/"
+const url = "https://marcge.dk/Lys-1.0.1/api/light/"
 
-function getAllPerson() {
+function getAllLights() {
     return fetch(url + "all").then(handleHttpErrors)
 }
 
-function getPerson(id) {
-    return fetch(url + id).then(handleHttpErrors)
+function addLight(light) {
+    return fetch(url, makeOptions("POST", light)).then(handleHttpErrors)
 }
 
-function addPerson(person) {
-    return fetch(url, makeOptions("POST", person)).then(handleHttpErrors)
-}
+// function deletePerson(personId) {
+//     return fetch(url + personId, makeOptions("DELETE")).then(handleHttpErrors)
+// }
 
-function deletePerson(personId) {
-    return fetch(url + personId, makeOptions("DELETE")).then(handleHttpErrors)
-}
-
-function editPerson(person) {
-    return fetch(url + person.id, makeOptions("PUT", person)).then(handleHttpErrors)
+function editLight(light) {
+    return fetch(url + light.id, makeOptions("PUT", light)).then(handleHttpErrors)
 }
 
 function makeOptions(method, body) {
@@ -42,11 +38,11 @@ function handleHttpErrors(res) {
 }
 
 const personFacade = {
-    getAllPerson,
-    addPerson,
-    deletePerson,
-    getPerson,
-    editPerson,
+    getAllLights,
+    addLight,
+    // deletePerson,
+    // getPerson,
+    editLight,
 }
 
 export default personFacade
